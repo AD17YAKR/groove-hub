@@ -1,8 +1,6 @@
-package com.groovehub.groovehub.model;
-
+package com.groovehub.auth.model;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
-import java.util.List;
 
 @Entity
 @Table(name = "user_table")
@@ -87,5 +85,3 @@ public class User {
 enum Role {
     ADMIN, USER
 }
-
-

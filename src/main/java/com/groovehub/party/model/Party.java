@@ -1,9 +1,14 @@
-package com.groovehub.groovehub.model;
+package com.groovehub.party.model;
 
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
 import java.util.List;
+
+import com.groovehub.auth.model.User;
+import com.groovehub.game.model.Game;
+import com.groovehub.partymember.model.PartyMember;
+import com.groovehub.songdetails.model.SongDetails;
 
 @Entity
 @Table(name = "party")

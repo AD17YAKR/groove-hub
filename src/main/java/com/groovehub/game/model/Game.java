@@ -1,9 +1,11 @@
-package com.groovehub.groovehub.model;
+package com.groovehub.game.model;
 
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
 import java.util.List;
+
+import com.groovehub.party.model.Party;
 
 @Entity
 @Table(name = "game")

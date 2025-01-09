@@ -1,4 +1,4 @@
-package com.groovehub.groovehub.model;
+package com.groovehub.game.model;
 
 import jakarta.persistence.*;
 

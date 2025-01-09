@@ -1,8 +1,11 @@
-package com.groovehub.groovehub.model;
+package com.groovehub.partymember.model;
 
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
+
+import com.groovehub.auth.model.User;
+import com.groovehub.party.model.Party;
 
 @Entity
 @Table(name = "party_member")

@@ -1,8 +1,10 @@
-package com.groovehub.groovehub.model;
+package com.groovehub.songdetails.model;
 
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
+
+import com.groovehub.party.model.Party;
 
 @Entity
 @Table(name = "song_details")

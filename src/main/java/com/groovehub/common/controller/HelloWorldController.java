@@ -1,4 +1,4 @@
-package com.groovehub.groovehub.controller;
+package com.groovehub.common.controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import java.util.ArrayList;
@@ -12,7 +12,7 @@ public class HelloWorldController {
     public List<Map<String, String>> sayHello() {
         List<Map<String, String>> res = new ArrayList<>();
         HashMap<String, String> map = new HashMap<>();
-        map.put("Hello", "World");
+        map.put("Hello", "World from common");
         res.add(map);
         return res;
     }
