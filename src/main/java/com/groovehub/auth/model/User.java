@@ -1,6 +1,9 @@
 package com.groovehub.auth.model;
+
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
+
+import com.groovehub.auth.util.Role;
 
 @Entity
 @Table(name = "user_table")
@@ -80,8 +83,4 @@ public class User {
     public void setUpdatedAt(LocalDateTime updatedAt) {
         this.updatedAt = updatedAt;
     }
-}
-
-enum Role {
-    ADMIN, USER
 }
