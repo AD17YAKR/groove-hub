@@ -25,7 +25,7 @@ public class UserController {
 
     @PostMapping({ "/login/", "/login" })
     public ResponseEntity<?> loginUser(@RequestBody UserDTO userDTO) {
-        User authenticatedUser = userService.authenticateUser(userDTO.getUsername(), userDTO.getPassword());
+        UserDTO authenticatedUser = userService.authenticateUser(userDTO.getUsername(), userDTO.getPassword());
         return ResponseEntity.ok(authenticatedUser);
     }
 }
