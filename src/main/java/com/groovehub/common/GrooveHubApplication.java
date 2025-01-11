@@ -7,10 +7,10 @@ import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfi
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
-@SpringBootApplication(exclude = {SecurityAutoConfiguration.class})
-@ComponentScan(basePackages = {"com.groovehub"})
+@SpringBootApplication(exclude = { SecurityAutoConfiguration.class })
+@ComponentScan(basePackages = { "com.groovehub" })
 @EntityScan("com.groovehub")
-@EnableJpaRepositories(basePackages = "com.groovehub.auth.repository")
+@EnableJpaRepositories(basePackages = "com.groovehub")
 public class GrooveHubApplication {
 
     public static void main(String[] args) {
