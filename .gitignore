@@ -1,10 +1,68 @@
-HELP.md
+### General ###
+*.log
+*.lock
+*.tmp
+*.bak
+*.swp
+*~
+.DS_Store
+Thumbs.db
+
+### Environment Variables ###
+.env
+.env.*
+
+### Maven ###
 target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
 
-### STS ###
+### Gradle ###
+.gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### IntelliJ IDEA ###
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+
+# IntelliJ specific folders and files
+.idea/libraries
+.idea/modules.xml
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/dictionaries
+.idea/vcs.xml
+.idea/jsLibraryMappings.xml
+.idea/httpRequests
+.idea/assetWizard.xml
+.idea/uiDesigner.xml
+.idea/compiler.xml
+.idea/dataSources/
+.idea/dataSources.ids
+.idea/dataSources.local.xml
+.idea/sqlDataSources.xml
+.idea/dynamic.xml
+.idea/find.xml
+.idea/spring.xml
+.idea/gradle.xml
+.idea/maven.xml
+.idea/kotlin_plugin.xml
+.idea/codeStyles/
+.idea/codeStyles.codeStyle
+.idea/codeStyles.projectSettings
+.idea/scopes/
+.idea/runConfigurations/
+
+### VS Code ###
+.vscode/
+
+### Eclipse/STS ###
 .apt_generated
 .classpath
 .factorypath
@@ -13,21 +71,44 @@ target/
 .springBeans
 .sts4-cache
 
-### IntelliJ IDEA ###
-.idea
-*.iws
-*.iml
-*.ipr
-
 ### NetBeans ###
 /nbproject/private/
 /nbbuild/
 /dist/
 /nbdist/
 /.nb-gradle/
-build/
-!**/src/main/**/build/
-!**/src/test/**/build/
 
-### VS Code ###
-.vscode/
+### PostgreSQL ###
+*.pgsql
+*.pg_dump
+
+### Java ###
+*.class
+*.jar
+*.war
+*.ear
+*.jmod
+hs_err_pid*
+
+### Logs ###
+logs/
+*.log
+*.trace
+*.out
+*.err
+
+### Spring Boot ###
+# Spring Boot specific
+spring.log
+
+# Common resources
+*.h2.db
+*.mv.db
+*.db.mv.db
+
+### Others ###
+*.sql
+data.sql
+schema.sql
+dump.sql
+/backup/
