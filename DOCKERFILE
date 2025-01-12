@@ -1,33 +1,35 @@
-# Use Eclipse Temurin as base image (recommended for Java)
-FROM eclipse-temurin:23-jdk-jammy
+# Start with a base Java image
+FROM eclipse-temurin:17-jdk-jammy
 
-# Set working directory
+# Set working directory in container
 WORKDIR /app
 
-# Copy the Maven POM and source code
-COPY pom.xml .
+# Copy the Maven wrapper files
+COPY .mvn/ .mvn/
+COPY mvnw pom.xml ./
+
+# Download dependencies (this layer will be cached)
+RUN ./mvnw dependency:go-offline
+
+# Copy the project source
 COPY src ./src
 
-# Install Maven and build the application
-RUN apt-get update && apt-get install -y maven
-RUN mvn clean package -DskipTests
+# Build the application
+RUN ./mvnw package -DskipTests
 
-# Create a new stage for the runtime
-FROM eclipse-temurin:23-jre-jammy
+# Use a smaller runtime image
+FROM eclipse-temurin:17-jre-jammy
 
 WORKDIR /app
 
-# Copy the built JAR from the build stage
+# Copy the built artifact from builder stage
 COPY --from=0 /app/target/*.jar app.jar
 
-# Expose port 8080
+# Set environment variables
+ENV SPRING_PROFILES_ACTIVE=prod
+
+# Expose the port the app runs on
 EXPOSE 8080
 
-# Set environment variables (you can override these during runtime)
-ENV SPRING_PROFILES_ACTIVE=prod
-ENV SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/groovehub
-ENV SPRING_DATASOURCE_USERNAME=postgres
-ENV SPRING_DATASOURCE_PASSWORD=password
-
-# Run the application
+# Command to run the application
 ENTRYPOINT ["java", "-jar", "app.jar"]

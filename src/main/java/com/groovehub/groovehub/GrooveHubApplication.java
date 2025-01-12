@@ -1,4 +1,4 @@
-package com.groovehub.common;
+package com.groovehub.groovehub;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
