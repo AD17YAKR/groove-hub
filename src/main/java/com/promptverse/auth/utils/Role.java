@@ -1,4 +1,4 @@
-package com.promptverse.auth.util;
+package com.promptverse.auth.utils;
 
 public enum Role {
     ADMIN, USER

@@ -7,8 +7,9 @@ import com.promptverse.auth.exception.WrongPasswordException;
 import com.promptverse.auth.mapper.UserMapper;
 import com.promptverse.auth.model.User;
 import com.promptverse.auth.repository.UserRepository;
-import com.promptverse.auth.util.JwtUtils;
-import com.promptverse.auth.util.Role;
+import com.promptverse.auth.utils.JwtUtils;
+import com.promptverse.auth.utils.Role;
+
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;

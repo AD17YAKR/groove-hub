@@ -1,7 +1,8 @@
 package com.promptverse.auth.dto;
 
-import com.promptverse.auth.util.Role;
 import java.time.LocalDateTime;
+
+import com.promptverse.auth.utils.Role;
 
 public class UserDTO {
 

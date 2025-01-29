@@ -1,14 +1,17 @@
-{
-  "properties": [
-    {
-      "name": "jwtSecret",
-      "type": "java.lang.String",
-      "description": "A description for 'jwtSecret'"
-    },
-    {
-      "name": "jwtExpirationMs",
-      "type": "java.lang.String",
-      "description": "A description for 'jwtExpirationMs'"
-    }
-  ]
-}
+{"properties": [
+  {
+    "name": "jwtSecret",
+    "type": "java.lang.String",
+    "description": "A description for 'jwtSecret'"
+  },
+  {
+    "name": "jwtExpirationMs",
+    "type": "java.lang.String",
+    "description": "A description for 'jwtExpirationMs'"
+  },
+  {
+    "name": "geminiAPIKey",
+    "type": "java.lang.String",
+    "description": "A description for 'geminiAPIKey'"
+  }
+]}

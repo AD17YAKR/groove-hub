@@ -1,4 +1,4 @@
-package com.promptverse.auth.util;
+package com.promptverse.auth.utils;
 
 import com.promptverse.auth.dto.UserDTO;
 import io.jsonwebtoken.Jwts;

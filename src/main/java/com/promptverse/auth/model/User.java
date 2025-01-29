@@ -3,7 +3,7 @@ package com.promptverse.auth.model;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
-import com.promptverse.auth.util.Role;
+import com.promptverse.auth.utils.Role;
 
 @Entity
 @Table(name = "user_table")
