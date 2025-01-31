@@ -2,7 +2,7 @@
 setlocal
 
 REM Set the base directory
-set "baseDir=src\main\java\com\groovehub"
+set "baseDir=src\main\java\com\promptverse"
 
 REM Hardcode the module name
 set "moduleName=auth"
