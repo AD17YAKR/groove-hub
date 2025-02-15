@@ -33,10 +33,9 @@ public class EmailInfo {
     private String responseContent;
 
     @ElementCollection
-    @CollectionTable(name = "sendgrid_ids_table", joinColumns = @JoinColumn(name = "user_id"))
-    @Column(name = "sendgrid_id")
-    private List<String> sendgridIds = new ArrayList<>();
-
+    @CollectionTable(name = "gmail_ids_table", joinColumns = @JoinColumn(name = "user_id"))
+    @Column(name = "gmail_ids")
+    private List<String> gmail_ids = new ArrayList<>();
 
     @OneToMany(mappedBy = "emailInfo", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<CronJob> cronJobs = new ArrayList<>();

@@ -7,15 +7,15 @@ import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfi
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.FilterType;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import de.codecentric.boot.admin.server.config.EnableAdminServer;
 
 @SpringBootApplication(exclude = { SecurityAutoConfiguration.class })
-@ComponentScan(basePackages = {"com.promptverse"})
+@ComponentScan(basePackages = { "com.promptverse" })
 @EntityScan("com.promptverse")
+@EnableAdminServer
 @EnableJpaRepositories(basePackages = "com.promptverse")
-@ComponentScan(basePackages = {"com.promptverse.common", "com.promptverse.llms"},
-        excludeFilters = @ComponentScan.Filter(
-                type = FilterType.ASSIGNABLE_TYPE,
-                classes = com.promptverse.llms.config.LLMConfig.class))
+@ComponentScan(basePackages = { "com.promptverse.common",
+        "com.promptverse.llms" }, excludeFilters = @ComponentScan.Filter(type = FilterType.ASSIGNABLE_TYPE, classes = com.promptverse.llms.config.LLMConfig.class))
 
 public class PromptVerseApplication {
 

@@ -21,16 +21,21 @@ public class SecurityConfig {
         @Bean
         public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
                 http.csrf(csrf -> csrf
-                                .ignoringRequestMatchers("/api/users/**","/test","/api/gemini/**")
+                                .ignoringRequestMatchers("/api/users/**", "/test", "/api/gemini/**", "/api/mail/**",
+                                                "/management/**")
                                 .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse()))
                                 .authorizeHttpRequests(auth -> auth
-                                                .requestMatchers("/api/users/**","/test/**","/api/gemini/**")
-                                        .permitAll()
+                                                .requestMatchers("/api/users/**", "/test/**", "/api/gemini/**",
+                                                                "/api/mail/**")
+                                                .permitAll()
+                                                .requestMatchers("/management/**", "/admin/**").permitAll() // ✅ Allow
+                                                                                                            // Admin UI
+                                                                                                            // &
+                                                                                                            // Actuator
                                                 .anyRequest().authenticated())
                                 .headers(headers -> headers
                                                 .xssProtection(xss -> xss
-                                                                .headerValue(
-                                                                                org.springframework.security.web.header.writers.XXssProtectionHeaderWriter.HeaderValue.ENABLED_MODE_BLOCK))
+                                                                .headerValue(org.springframework.security.web.header.writers.XXssProtectionHeaderWriter.HeaderValue.ENABLED_MODE_BLOCK))
                                                 .contentSecurityPolicy(csp -> csp
                                                                 .policyDirectives(
                                                                                 "default-src 'self'; frame-ancestors 'none'"))
@@ -43,13 +48,7 @@ public class SecurityConfig {
                                                 .contentTypeOptions(HeadersConfigurer.ContentTypeOptionsConfig::disable)
                                                 .contentSecurityPolicy(csp -> csp
                                                                 .policyDirectives(
-                                                                                "default-src 'self'; " +
-                                                                                                "script-src 'self'; " +
-                                                                                                "style-src 'self'; " +
-                                                                                                "img-src 'self' data:; "
-                                                                                                +
-                                                                                                "frame-ancestors 'none';"))
-
+                                                                                "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; frame-ancestors 'none';"))
                                                 .cacheControl(HeadersConfigurer.CacheControlConfig::disable));
 
                 return http.build();

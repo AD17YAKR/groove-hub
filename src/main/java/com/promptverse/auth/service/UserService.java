@@ -25,7 +25,6 @@ public class UserService {
     @Autowired
     private BCryptPasswordEncoder passwordEncoder;
 
-    @Autowired
     public UserService(UserRepository userRepository, UserMapper userMapper, JwtUtils jwtUtils) {
         this.userRepository = userRepository;
         this.userMapper = userMapper;
