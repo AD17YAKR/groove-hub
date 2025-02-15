@@ -1,6 +1,5 @@
 package com.promptverse.mailInfo.dto;
 
-
 import lombok.Data;
 
 import java.time.LocalDateTime;
@@ -14,6 +13,6 @@ public class EmailInfoDTO {
     private Boolean isResponded;
     private LocalDateTime responseDate;
     private String responseContent;
-    private List<String> sendgridIds;
+    private List<String> gmailIds;
     private List<CronJobDTO> cronJobs;
 }

@@ -8,7 +8,7 @@ import com.promptverse.auth.model.User;
 import com.promptverse.auth.service.UserService;
 
 @RestController
-@RequestMapping("/api/users")
+@RequestMapping("/api")
 public class UserController {
 
     private final UserService userService;
